@@ -9,7 +9,7 @@ public class Main {
 		
 		TwitterSite twitter = new TwitterSite();
 		
-		twitter.getTweets("burger");
+		twitter.getAllTweets("burger");
 		
 		//twitter.printTweetStorage();
 		//System.out.println("");
