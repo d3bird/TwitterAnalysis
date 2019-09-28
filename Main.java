@@ -4,11 +4,15 @@ import org.jfree.ui.RefineryUtilities;
 
 public class Main {
 
+	
+	
+	
 	public static void main(String[] args) throws InterruptedException {
 
 		TwitterSite twitter = new TwitterSite();
 
 		String input = "mcdonalds";
+		
 		twitter.getAllTweets(input);
 
 		System.out.println(twitter.getNumOfTweets());
@@ -38,9 +42,11 @@ public class Main {
 
 		double p  = temp[0] + temp2[0];
 		double n  = temp[1] + temp2[1];
-		double neu  = temp[0] + temp2[0];
+		double neu  = twitter.getNumOfTweets() - (p + n);
 		
-		Graphs demo = new Graphs("Twitter stats for" + input, p, n, neu);
+		
+		
+		Graphs demo = new Graphs("Twitter stats for " + input, p, n, neu);
 		demo.setSize(800, 650);
 		RefineryUtilities.centerFrameOnScreen(demo);
 		demo.setVisible(true);
