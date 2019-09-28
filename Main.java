@@ -4,6 +4,10 @@ import java.io.IOException;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+
 
 public class Main {
 
@@ -18,10 +22,18 @@ public class Main {
 			Document doc = Jsoup.connect(baseline + hashtagword).get();
 			System.out.println(doc.title());
 
-			
-			
-			
-			
+			Elements paragraphs = doc.getElementsByTag("p");
+			for (Element paragraph : paragraphs) {
+				if (paragraph.text().contains(" ")) {
+					System.out.println(paragraph.text());
+					// System.out.println("");
+					System.out.println("");
+					System.out.println("");
+				}
+			}
+
+			System.out.println("");
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 
