@@ -8,16 +8,17 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 
-
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		String baseline = "https://twitter.com/search?q=%23";
 
 		String hashtagword = "burger";
 
+		Tweet example = new Tweet();
+		Tweet example2 = new Tweet("message",true, 2);//message, does it have pictures, how many
+		
 		try {
 			Document doc = Jsoup.connect(baseline + hashtagword).get();
 			System.out.println(doc.title());
