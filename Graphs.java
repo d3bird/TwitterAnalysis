@@ -34,7 +34,7 @@ public class Graphs extends ApplicationFrame {
 		ne = neutral / total;
 
 		DefaultPieDataset dataset = new DefaultPieDataset();
-		dataset.setValue("Possitve", p);
+		dataset.setValue("Positve", p);
 		dataset.setValue("Negative", n);
 		dataset.setValue("Neutral", ne);
 		return dataset;

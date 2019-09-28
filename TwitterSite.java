@@ -109,6 +109,11 @@ public class TwitterSite {
 	public void getTopHashTags() {
 
 	}
+	
+	
+	public int getNumOfTweets() {
+		return tweets.size();
+	}
 
 	public Vector<Tweet> getTweets() {
 		return tweets;

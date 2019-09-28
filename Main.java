@@ -11,12 +11,12 @@ public class Main {
 		
 		twitter.getTweets("burger");
 		
-		twitter.printTweetStorage();
-		System.out.println("");
-		System.out.println("");
+		//twitter.printTweetStorage();
+		//System.out.println("");
+		//System.out.println("");
 		//twitter.getTrends();
 	
-		
+		System.out.println(twitter.getNumOfTweets());
 
 		
 		Graphs demo = new Graphs( "Twitter stats", 30,40, 1  );  
