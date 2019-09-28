@@ -40,16 +40,14 @@ public class Graphs extends ApplicationFrame {
 		return dataset;
 	}
 
-	private static JFreeChart createChart( PieDataset dataset) {
-	      JFreeChart chart = ChartFactory.createPieChart(      
-	    		  title,   // chart title 
-	         dataset,          // data    
-	         true,             // include legend   
-	         true, 
-	         false);
+	private static JFreeChart createChart(PieDataset dataset) {
+		JFreeChart chart = ChartFactory.createPieChart(title, // chart title
+				dataset, // data
+				true, // include legend
+				true, false);
 
-	      return chart;
-	   }
+		return chart;
+	}
 
 	public static JPanel createGraph(double p, double n, double ne) {
 		JFreeChart chart = createChart(createDataset(p, n, ne));
