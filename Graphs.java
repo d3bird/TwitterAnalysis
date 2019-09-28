@@ -41,7 +41,7 @@ public class Graphs extends ApplicationFrame {
 	}
 
 	private static JFreeChart createChart(PieDataset dataset) {
-		JFreeChart chart = ChartFactory.createPieChart(title, // chart title
+		JFreeChart chart = ChartFactory.createPieChart("", // chart title
 				dataset, // data
 				true, // include legend
 				true, false);
