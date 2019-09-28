@@ -19,7 +19,7 @@ public class Main {
 		
 
 		
-		Graphs demo = new Graphs( "Mobile Sales", 30,40, 1  );  
+		Graphs demo = new Graphs( "Twitter stats", 30,40, 1  );  
 	      demo.setSize( 800 , 650 );    
 	      RefineryUtilities.centerFrameOnScreen( demo );    
 	      demo.setVisible( true ); 
