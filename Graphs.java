@@ -15,23 +15,33 @@ import org.jfree.ui.ApplicationFrame;
 
 public class Graphs extends ApplicationFrame {
 
-	public Graphs(String title) {
+	public Graphs(String title, double p, double n, double ne) {
 	      super( title ); 
-	      setContentPane(createDemoPanel( ));
+	      setContentPane(createGraph(p, n, ne ));
 	}
-
-	 private static PieDataset createDataset( ) {
-	      DefaultPieDataset dataset = new DefaultPieDataset( );
-	      dataset.setValue( "IPhone 5s" , new Double( 20 ) );  
-	      dataset.setValue( "SamSung Grand" , new Double( 20 ) );   
-	      dataset.setValue( "MotoG" , new Double( 40 ) );    
-	      dataset.setValue( "Nokia Lumia" , new Double( 10 ) );  
+ 
+	 private static PieDataset createDataset(double positive, double negative, double neutral ) {
+	     
+		 double p;
+		 double n;
+		 double ne;
+		 
+		 double total = positive + negative + neutral;
+		 
+		 p = positive/total;
+		 n = negative/total;
+		 ne = neutral/total;
+		 
+		  DefaultPieDataset dataset = new DefaultPieDataset( );
+	      dataset.setValue( "Possitve" , p);  
+	      dataset.setValue( "Negative" , n);   
+	      dataset.setValue( "Neutral" , ne );    
 	      return dataset;         
 	   }
 	 
 	 private static JFreeChart createChart( PieDataset dataset ) {
 	      JFreeChart chart = ChartFactory.createPieChart(      
-	         "Mobile Sales",   // chart title 
+	         "twitter stats",   // chart title 
 	         dataset,          // data    
 	         true,             // include legend   
 	         true, 
@@ -40,8 +50,8 @@ public class Graphs extends ApplicationFrame {
 	      return chart;
 	   }
 	 
-	 public static JPanel createDemoPanel( ) {
-	      JFreeChart chart = createChart(createDataset( ) );  
+	 public static JPanel createGraph( double p, double n, double ne) {
+	      JFreeChart chart = createChart(createDataset(p, n, ne ) );  
 	      return new ChartPanel( chart ); 
 	   }
 	
