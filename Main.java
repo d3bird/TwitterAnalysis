@@ -1,5 +1,7 @@
 package twitter;
 
+import org.jfree.ui.RefineryUtilities;
+
 public class Main {
 
 	
@@ -10,7 +12,19 @@ public class Main {
 		twitter.getTweets("burger");
 		
 		twitter.printTweetStorage();
+		System.out.println("");
+		System.out.println("");
+		//twitter.getTrends();
+	
+		
 
+		
+		Graphs demo = new Graphs( "Mobile Sales" );  
+	      demo.setSize( 800 , 650 );    
+	      RefineryUtilities.centerFrameOnScreen( demo );    
+	      demo.setVisible( true ); 
+		
+		
 	}
 
 }
