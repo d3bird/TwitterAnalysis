@@ -8,7 +8,8 @@ public class Main {
 
 		TwitterSite twitter = new TwitterSite();
 
-		twitter.getAllTweets("mcdonalds");
+		String input = "mcdonalds";
+		twitter.getAllTweets(input);
 
 		System.out.println(twitter.getNumOfTweets());
 
@@ -19,7 +20,7 @@ public class Main {
 		
 		
 		Thread t1 = new Thread(p1);
-		Thread t2 = new Thread(p1);
+		Thread t2 = new Thread(p2);
 		t1.start();
 		t2.start();
 		
@@ -27,20 +28,19 @@ public class Main {
 		t2.join();
 		double[] temp = p1.getStats();
 		double[] temp2 = p2.getStats();
-		System.out.println(temp[0]);
+		/*System.out.println(temp[0]);
 		System.out.println(temp[1]);
 		System.out.println(temp[2]);
-
 		
 		System.out.println(temp2[0]);
 		System.out.println(temp2[1]);
-		System.out.println(temp2[2]);
-		//System.out.println(t2.getStats());
-		
-		//System.out.println(proc.hits("McDonald"));
-		
+		System.out.println(temp2[2]);*/
 
-		Graphs demo = new Graphs("Twitter stats", 30, 40, 1);
+		double p  = temp[0] + temp2[0];
+		double n  = temp[1] + temp2[1];
+		double neu  = temp[0] + temp2[0];
+		
+		Graphs demo = new Graphs("Twitter stats for" + input, p, n, neu);
 		demo.setSize(800, 650);
 		RefineryUtilities.centerFrameOnScreen(demo);
 		demo.setVisible(true);

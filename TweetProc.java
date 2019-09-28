@@ -18,16 +18,18 @@ public class TweetProc implements Runnable {
 	Vector<String> comphrase = new Vector<String>();
 	Vector comphrasenum = new Vector();
 
-	double[] data = { 0, 0, 0 };
+	double[] data;
 
 	public TweetProc(Vector<Tweet> i, String tn) {
 		// TODO Auto-generated constructor stub
 		dataset = i;
 		newdata = false;
 		threadName = tn;
-
+		
 		importWords("good.txt", true);
 		importWords("bad.txt", false);
+		
+		data  = new double[3];
 	}
 
 	/*
@@ -105,13 +107,15 @@ public class TweetProc implements Runnable {
 				}
 			}
 		}
-
+		
 		System.out.println("Thread " + threadName + " exiting.");
 	}
 
 	public double[] getStats() {
 		// double[] output = { 0, 0, 0 };
-
+	//	System.out.println(data[0]);
+	//	System.out.println(data[1]);
+		//System.out.println(data[2]);
 		return data;
 	}
 
